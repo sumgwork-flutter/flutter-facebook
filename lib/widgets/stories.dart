@@ -13,7 +13,7 @@ class Stories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: Responsive.isDesktop(context) ? Colors.transparent : Colors.white,
       height: 200,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
@@ -67,6 +67,15 @@ class _StoryCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(
               12.0,
             ),
+            boxShadow: Responsive.isDesktop(context)
+                ? [
+                    BoxShadow(
+                      offset: Offset(0, 2),
+                      color: Colors.black26,
+                      blurRadius: 4.0,
+                    )
+                  ]
+                : null,
           ),
         ),
         Positioned(
