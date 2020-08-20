@@ -20,9 +20,12 @@ class UserCard extends StatelessWidget {
           SizedBox(
             width: 6.0,
           ),
-          Text(
-            user.name,
-            style: TextStyle(fontSize: 16.0),
+          Flexible(
+            child: Text(
+              user.name,
+              style: TextStyle(fontSize: 16.0),
+              overflow: TextOverflow.ellipsis,
+            ),
           )
         ],
       ),
